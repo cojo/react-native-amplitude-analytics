@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
 
   s.dependency "React"
   
-  s.dependency "Amplitude-iOS", "~> 5.1.0"
+  s.dependency "Amplitude", "~> 5.1.0"
 end
