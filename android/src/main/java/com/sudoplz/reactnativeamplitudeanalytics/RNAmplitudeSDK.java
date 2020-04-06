@@ -41,7 +41,10 @@ public class RNAmplitudeSDK extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void initialize(String apiKey, Boolean trackSessionEvents) {
+  public void initialize(String apiKey, Boolean trackSessionEvents, Boolean useAdvertisingIdForDeviceId) {
+    if (useAdvertisingIdForDeviceId) {
+      Amplitude.getInstance().useAdvertisingIdForDeviceId()
+    }
     Amplitude.getInstance().initialize(getReactApplicationContext(), apiKey).enableForegroundTracking(this.mApplication);
     Amplitude.getInstance().trackSessionEvents(trackSessionEvents);
   }
